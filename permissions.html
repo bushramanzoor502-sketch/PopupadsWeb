@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Permissions explained | ClearGuard</title>
+  <meta name="description" content="Every permission and Android capability ClearGuard uses, why, when, what it never does, and how to turn it off. Includes the Accessibility disclosure.">
+  <meta name="theme-color" content="#4B4577">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+  <meta property="og:title" content="Permissions explained | ClearGuard">
+  <meta property="og:description" content="Every permission and Android capability ClearGuard uses, why, when, what it never does, and how to turn it off. Includes the Accessibility disclosure.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/montserrat.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36">
+        <span>ClearGuard<small>by UtilEdge</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="privacy-policy.html">Privacy policy</a></li>
+          <li><a href="terms-of-use.html">Terms of use</a></li>
+          <li><a href="permissions.html" aria-current="page">Permissions</a></li>
+          <li><a href="data-deletion.html">Data deletion</a></li>
+          <li><a href="play-store-compliance.html">Play compliance</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <header class="page-head">
+        <span class="eyebrow">Transparency</span>
+        <h1>Permissions explained</h1>
+        <p class="lede">Every permission and Android capability ClearGuard uses, in plain language: why it is needed, when it is used, what it never does, and how to turn it off.</p>
+        <dl class="facts doc-card" aria-label="Document details">
+          <dt>App</dt><dd>ClearGuard for Android (<code>com.veriattend.clearguard</code>)</dd>
+          <dt>Updated</dt><dd><time datetime="2026-10-27">27 October 2026</time></dd>
+        </dl>
+        <p class="meta">ClearGuard requests only two Android permissions that you might see listed: <strong>notifications</strong> (optional) and <strong>request to delete packages</strong> (opens Android's own uninstall screen). Everything else below is a service you switch on yourself, or a system feature that needs no permission.</p>
+      </header>
+
+      <div class="legal">
+        <nav class="toc card" aria-label="Permissions contents">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#accessibility">Accessibility service</a></li>
+            <li><a href="#disclosure">The in-app disclosure</a></li>
+            <li><a href="#play-policy">Accessibility API policy</a></li>
+            <li><a href="#bubble">Floating bubble</a></li>
+            <li><a href="#notifications">Notifications</a></li>
+            <li><a href="#delete-packages">Request delete packages</a></li>
+            <li><a href="#visibility">Package visibility</a></li>
+            <li><a href="#tile">Quick Settings tile</a></li>
+            <li><a href="#widget">Home-screen widget</a></li>
+            <li><a href="#reminder">Reminder alarm</a></li>
+            <li><a href="#other">Other technical entries</a></li>
+            <li><a href="#not-requested">Not requested</a></li>
+          </ol>
+        </nav>
+
+        <div class="legal-body">
+          <section id="accessibility" aria-labelledby="h-a11y">
+            <h2 id="h-a11y">1. Accessibility service</h2>
+            <p><span class="pill">You switch it on</span> <span class="pill">Core feature</span></p>
+            <dl class="facts">
+              <dt>Why</dt><dd>Android tells an app which other app brought a window to the front only through an Accessibility service. Without it ClearGuard cannot link a popup to an app.</dd>
+              <dt>When</dt><dd>Only during an observation session that you start, after you agree to the in-app disclosure. Outside a session the service asks Android for no events at all. Sessions last 5 minutes to 2 hours and are interrupted when the screen turns off.</dd>
+              <dt>What it reads</dt><dd>For "window state changed" events only: the package name of the app, the event type and the time.</dd>
+              <dt>What it never does</dt><dd>Read window content or screen text (<code>canRetrieveWindowContent="false"</code>), perform gestures or taps (<code>canPerformGestures="false"</code>), take screenshots (<code>canTakeScreenshot="false"</code>), read what you type, or change settings or other apps.</dd>
+              <dt>Turn it off</dt><dd>Android Settings → Accessibility → ClearGuard (often under "Downloaded apps" or "Installed apps") → off. Or, in ClearGuard, withdraw consent on the Access screen: observation stops even while the Android setting is on.</dd>
+            </dl>
+            <p>ClearGuard is <strong>not an accessibility tool</strong> for people with disabilities, and declares this to Android (<code>isAccessibilityTool="false"</code>). Android's settings screen may describe broader abilities than ClearGuard uses; ClearGuard cannot change that wording.</p>
+            <p>The description Android shows on ClearGuard's Accessibility settings page:</p>
+            <blockquote class="quote">
+              <p>During observation sessions you start in ClearGuard, this reads the package name, event type, and timing of app window changes. It does not read screen text or messages, take screenshots, or perform taps. Turning this on does not start observing; you start each session in ClearGuard.</p>
+            </blockquote>
+          </section>
+
+          <section id="disclosure" aria-labelledby="h-disc">
+            <h2 id="h-disc">2. The in-app prominent disclosure</h2>
+            <p>Before ClearGuard opens Android's Accessibility settings, it shows a separate sheet in the normal flow (when you first tap to start a session). It is not hidden in a menu, and it is not combined with any other notice. You must tap <strong>"Agree and open settings"</strong> to continue; <strong>"Not now"</strong>, the back button or tapping outside count as no consent, and ClearGuard then observes nothing. If you decline, the sheet appears again the next time you try to start a session. The text, as shown in the app (disclosure version 3):</p>
+            <blockquote class="quote" aria-label="In-app disclosure text">
+              <p><strong>Before ClearGuard observes anything</strong></p>
+              <p>ClearGuard uses Android Accessibility during observation sessions you start to read the package name, event type, and timing of selected app events, including while you use other apps. This helps you review possible sources of unexpected popups.</p>
+              <p>ClearGuard does not read screen text or messages, take screenshots, or perform taps.</p>
+              <p>Recent events stay temporarily in memory. When a session ends, a summary of which apps reported window changes is saved on this device automatically, unless nothing was observed. During a session, ClearGuard may save an "Awaiting review" incident automatically when an app's window appears unexpectedly. Saved incidents and sessions stay on this device until you delete them or retention expires. This data is not sent to or shared with us or anyone else.</p>
+              <p>Some popups do not reveal their source.</p>
+              <p>Android's own settings screen may describe broader abilities than ClearGuard uses. ClearGuard cannot change that wording.</p>
+              <p>[Agree and open settings] [Not now]</p>
+            </blockquote>
+            <p>ClearGuard stores the disclosure version and the time you agreed. If the disclosure changes in a way that affects what is read, you are asked again before anything is observed.</p>
+          </section>
+
+          <section id="play-policy" aria-labelledby="h-policy">
+            <h2 id="h-policy">3. How this follows Google Play's Accessibility API policy</h2>
+            <ul class="checklist">
+              <li><strong>Disclosed purpose only.</strong> The service is used for one function: showing which app reported a window change near a popup you mark, or that automatic detection saves for your review. It is not used for advertising, analytics, or anything else.</li>
+              <li><strong>User-initiated.</strong> You switch the service on in Android settings and you start every session. ClearGuard does not start sessions by itself; even the optional reminder only opens the app.</li>
+              <li><strong>Prominent disclosure and affirmative consent</strong> in the app, before Android settings open, as shown above. The Android service description is extra and does not replace it.</li>
+              <li><strong>Narrowest configuration.</strong> One event type (<code>typeWindowStateChanged</code>), no window content, no gestures, no screenshots.</li>
+              <li><strong>No autonomous actions.</strong> ClearGuard never taps, changes settings, or stops you from disabling or uninstalling any app, including itself.</li>
+              <li><strong>No circumvention</strong> of Android's security, privacy controls or notifications.</li>
+              <li><strong>Not declared as an accessibility tool</strong>, so it meets the disclosure and consent requirements instead.</li>
+              <li><strong>Documented</strong> in the Play store listing description and in the Play Console Accessibility declaration. <span class="todo">owner: confirm both are submitted with this wording</span></li>
+            </ul>
+          </section>
+
+          <section id="bubble" aria-labelledby="h-bubble">
+            <h2 id="h-bubble">4. Floating bubble</h2>
+            <p><span class="pill">No extra permission</span></p>
+            <dl class="facts">
+              <dt>Why</dt><dd>Lets you mark a popup with one tap without leaving the app you are in.</dd>
+              <dt>When</dt><dd>Only while a session runs (dimmed while paused), and never over ClearGuard itself. It is drawn by ClearGuard's Accessibility service, so it needs no "Display over other apps" permission and disappears with the service.</dd>
+              <dt>What it never does</dt><dd>Read anything from the screen. It shows only ClearGuard's own icon, or the icon of the app ClearGuard thinks may be behind a popup.</dd>
+              <dt>Turn it off</dt><dd>ClearGuard Settings → Floating bubble, or drag it onto the X to hide it for the current session.</dd>
+            </dl>
+          </section>
+
+          <section id="notifications" aria-labelledby="h-notif">
+            <h2 id="h-notif">5. Notifications <code>POST_NOTIFICATIONS</code></h2>
+            <p><span class="pill">Optional</span> <span class="pill">Runtime permission</span></p>
+            <dl class="facts">
+              <dt>Why</dt><dd>Shows ClearGuard's own session controls (Mark, Pause, Stop), a quiet note when a popup is saved, and the optional reminder.</dd>
+              <dt>When</dt><dd>Requested only when you tap "Allow notifications" on the Access screen or in the reminder settings. Everything works without it.</dd>
+              <dt>What it never does</dt><dd>Show package names in the session notification, or show ads. On the lock screen the saved-popup note only says "Possible popup from an app".</dd>
+              <dt>Turn it off</dt><dd>ClearGuard Settings → ClearGuard notifications, or Android Settings → Apps → ClearGuard → Notifications.</dd>
+            </dl>
+          </section>
+
+          <section id="delete-packages" aria-labelledby="h-del">
+            <h2 id="h-del">6. Request delete packages <code>REQUEST_DELETE_PACKAGES</code></h2>
+            <p><span class="pill">Install-time</span></p>
+            <dl class="facts">
+              <dt>Why</dt><dd>The "Uninstall" button in Recent apps (and in the device-admin helper of the Permissions checkup) opens Android's own uninstall confirmation for an app you picked.</dd>
+              <dt>When</dt><dd>Only when you tap Uninstall on an app.</dd>
+              <dt>What it never does</dt><dd>Uninstall anything by itself. Android asks you to confirm, and you can cancel. System apps get no Uninstall button.</dd>
+              <dt>Turn it off</dt><dd>It is not a switchable permission. If you do not want it used, simply do not tap Uninstall; App info works as an alternative.</dd>
+            </dl>
+          </section>
+
+          <section id="visibility" aria-labelledby="h-vis">
+            <h2 id="h-vis">7. Package visibility (which apps ClearGuard can see)</h2>
+            <p><span class="pill">No permission</span></p>
+            <dl class="facts">
+              <dt>Why</dt><dd>To show app names and icons in results, the Visible apps list and the Permissions checkup; to recognise the home screen and share sheet as context rather than popups; and to find your web browsers for the Guides.</dd>
+              <dt>Scope</dt><dd>A narrow declaration: apps with a launcher icon, home apps, the share sheet, and apps that open web links. ClearGuard does <strong>not</strong> use <code>QUERY_ALL_PACKAGES</code>.</dd>
+              <dt>What it never does</dt><dd>Send the list of your apps anywhere.</dd>
+            </dl>
+          </section>
+
+          <section id="tile" aria-labelledby="h-tile">
+            <h2 id="h-tile">8. Quick Settings "Mark popup" tile</h2>
+            <p><span class="pill">You add it</span></p>
+            <p>An optional tile you can drag into Quick Settings to mark a popup during a session. It can only be bound by Android's System UI. Remove it any time by editing your Quick Settings tiles.</p>
+          </section>
+
+          <section id="widget" aria-labelledby="h-widget">
+            <h2 id="h-widget">9. Home-screen widget</h2>
+            <p><span class="pill">You add it</span></p>
+            <p>An optional widget that shows whether a session is running and lets you mark a popup. It never names an app, never wakes the phone on a schedule, and never starts a session without a choice inside the app. Remove it like any widget.</p>
+          </section>
+
+          <section id="reminder" aria-labelledby="h-rem">
+            <h2 id="h-rem">10. Session reminder</h2>
+            <p><span class="pill">Off by default</span> <span class="pill">No extra permission</span></p>
+            <p>If you turn on "Remind me to check for popups" (daily or every 3 days), ClearGuard sets an ordinary, inexact Android alarm to show one notification. It never starts a session, is skipped while a session runs, and does not use exact alarms or start at boot. Turn it off in ClearGuard Settings.</p>
+          </section>
+
+          <section id="other" aria-labelledby="h-other">
+            <h2 id="h-other">11. Other technical entries</h2>
+            <ul>
+              <li><code>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>: added automatically by the AndroidX library to keep ClearGuard's internal broadcasts private to ClearGuard. It grants no access to your data.</li>
+              <li><strong>Screen-off signal</strong>: ClearGuard listens for the screen turning off, with no permission, so it can interrupt a session.</li>
+              <li><strong>Google Play In-App Review</strong>: may ask Google Play once to show its rating prompt. It adds no permission.</li>
+            </ul>
+          </section>
+
+          <section id="not-requested" aria-labelledby="h-not">
+            <h2 id="h-not">12. What ClearGuard does not request</h2>
+            <ul class="nolist">
+              <li>Internet access (<code>INTERNET</code>) or network state</li>
+              <li>Display over other apps (<code>SYSTEM_ALERT_WINDOW</code>)</li>
+              <li>Usage access (<code>PACKAGE_USAGE_STATS</code>) or all-packages visibility (<code>QUERY_ALL_PACKAGES</code>)</li>
+              <li>Foreground service, start at boot, or exact alarms</li>
+              <li>Location, contacts, phone, SMS, camera, microphone, photos or files</li>
+              <li>Device admin, VPN, or notification listener</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="" width="36" height="36"><span>ClearGuard<small>by UtilEdge</small></span></a>
+          <p>Investigate unexpected popups on Android. Works offline: no account, no analytics, no ads, no internet permission.</p>
+        </div>
+        <nav aria-label="Product">
+          <h2>Product</h2>
+          <ul>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#privacy">Privacy by design</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="permissions.html">Permissions explained</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Legal">
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy policy</a></li>
+            <li><a href="terms-of-use.html">Terms of use</a></li>
+            <li><a href="data-deletion.html">Data deletion</a></li>
+            <li><a href="play-store-compliance.html">Google Play compliance</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:bushramanzoor502@gmail.com">bushramanzoor502@gmail.com</a></li>
+            <li><a href="contact.html">Contact page</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <!-- OWNER TODO: confirm the legal entity name shown here. -->
+        <span>&copy; 2026 UtilEdge</span>
+        <span>Google Play is a trademark of Google LLC.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

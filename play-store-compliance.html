@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Play compliance summary | ClearGuard</title>
+  <meta name="description" content="Summary of ClearGuard's Google Play Data safety answers, Accessibility API use, permissions, and policy stance.">
+  <meta name="theme-color" content="#4B4577">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+  <meta property="og:title" content="Google Play compliance summary | ClearGuard">
+  <meta property="og:description" content="Summary of ClearGuard's Google Play Data safety answers, Accessibility API use, permissions, and policy stance.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/montserrat.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36">
+        <span>ClearGuard<small>by UtilEdge</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="privacy-policy.html">Privacy policy</a></li>
+          <li><a href="terms-of-use.html">Terms of use</a></li>
+          <li><a href="permissions.html">Permissions</a></li>
+          <li><a href="data-deletion.html">Data deletion</a></li>
+          <li><a href="play-store-compliance.html" aria-current="page">Play compliance</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <header class="page-head">
+        <span class="eyebrow">Google Play</span>
+        <h1>Google Play compliance summary</h1>
+        <p class="lede">A plain summary of how ClearGuard answers Google Play's Data safety form and how it meets the Accessibility API, Permissions, Deceptive Behavior and Families policies. It describes the app as built; it is not a statement by Google.</p>
+        <dl class="facts doc-card" aria-label="Document details">
+          <dt>App</dt><dd>ClearGuard for Android (<code>com.veriattend.clearguard</code>)</dd>
+          <dt>Prepared</dt><dd><time datetime="2026-10-27">27 October 2026</time></dd>
+        </dl>
+      </header>
+
+      <div class="legal">
+        <nav class="toc card" aria-label="Compliance contents">
+          <h2>On this page</h2>
+          <ol>
+            <li><a href="#data-safety">Data safety answers</a></li>
+            <li><a href="#on-device">On-device processing</a></li>
+            <li><a href="#accessibility">Accessibility API</a></li>
+            <li><a href="#permissions">Permissions</a></li>
+            <li><a href="#deceptive">Deceptive behavior</a></li>
+            <li><a href="#families">Families and audience</a></li>
+            <li><a href="#other">Other declarations</a></li>
+            <li><a href="#links">Links for Play Console</a></li>
+          </ol>
+        </nav>
+
+        <div class="legal-body">
+          <section id="data-safety" aria-labelledby="h-ds">
+            <h2 id="h-ds">1. Data safety answers</h2>
+            <p>Google Play defines "collected" as data transmitted off the user's device, and "shared" as data transferred to a third party. ClearGuard transmits nothing.</p>
+            <div class="table-wrap">
+              <table>
+                <caption class="visually-hidden">Data safety form answers</caption>
+                <thead><tr><th scope="col">Question</th><th scope="col">Answer</th><th scope="col">Basis</th></tr></thead>
+                <tbody>
+                  <tr><td>Does the app collect or share any required user data types?</td><td><strong>No</strong></td><td>No <code>INTERNET</code> permission; no network, analytics, ads or crash-reporting libraries in the release build</td></tr>
+                  <tr><td>Data collected</td><td><strong>None</strong></td><td>All processing happens on the device</td></tr>
+                  <tr><td>Data shared</td><td><strong>None</strong></td><td>Reports are saved only by explicit user action to a location the user picks</td></tr>
+                  <tr><td>Is data encrypted in transit?</td><td>Not applicable</td><td>Nothing is transmitted. Saved records are encrypted at rest (AES-256-GCM, Android Keystore key)</td></tr>
+                  <tr><td>Can users request deletion?</td><td>Yes, in the app</td><td>Delete one record, Delete all history, Reset ClearGuard, automatic retention (1/7/30 days, default 7), uninstall. See <a href="data-deletion.html">data deletion</a></td></tr>
+                  <tr><td>Account creation</td><td>None</td><td>The app has no accounts or login</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="on-device" aria-labelledby="h-od">
+            <h2 id="h-od">2. Data processed on the device only</h2>
+            <p>Not "collected" under Play's definition, but listed here for transparency:</p>
+            <ul>
+              <li><strong>App activity:</strong> package name, event type and time of window-change events during user-started sessions.</li>
+              <li><strong>Installed apps:</strong> launcher-visible apps and their names, icons, install source and selected abilities, shown in the Visible apps list and the Permissions checkup.</li>
+              <li><strong>User-entered answers</strong> attached to investigations (what was seen, approximate time, follow-up).</li>
+            </ul>
+            <p>All of it stays on the phone, is excluded from backup and device transfer, and follows the retention described in the <a href="privacy-policy.html#retention">privacy policy</a>.</p>
+          </section>
+
+          <section id="accessibility" aria-labelledby="h-acc">
+            <h2 id="h-acc">3. Accessibility API policy</h2>
+            <div class="table-wrap">
+              <table>
+                <caption class="visually-hidden">Accessibility API declaration</caption>
+                <thead><tr><th scope="col">Item</th><th scope="col">ClearGuard</th></tr></thead>
+                <tbody>
+                  <tr><td>Accessibility tool?</td><td>No. <code>isAccessibilityTool="false"</code></td></tr>
+                  <tr><td>Purpose</td><td>App functionality: show which app reported a window change near a popup the user marks, or one saved by automatic detection for review. The floating bubble used for marking is drawn by the same service, only during a session.</td></tr>
+                  <tr><td>Data accessed</td><td>Package name, event type and timing of <code>TYPE_WINDOW_STATE_CHANGED</code> events only. No window content, gestures or screenshots.</td></tr>
+                  <tr><td>Data collected or shared off device</td><td>None</td></tr>
+                  <tr><td>User initiation</td><td>User enables the service and starts each time-limited session (5 min to 2 h). No events are requested outside a session.</td></tr>
+                  <tr><td>Prominent disclosure</td><td>Separate in-app sheet before Android settings open, with "Agree and open settings" / "Not now"; dismissal is not consent. Full text on <a href="permissions.html#disclosure">permissions explained</a>.</td></tr>
+                  <tr><td>Autonomous actions</td><td>None. The app never taps, changes settings or blocks uninstalling.</td></tr>
+                  <tr><td>Listing</td><td>Accessibility use is described in the full store description.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="permissions" aria-labelledby="h-perm">
+            <h2 id="h-perm">4. Permissions policy</h2>
+            <ul>
+              <li><code>POST_NOTIFICATIONS</code>: optional, requested in context from the Access screen, used only for ClearGuard's own session controls, saved-popup notes and the opt-in reminder.</li>
+              <li><code>REQUEST_DELETE_PACKAGES</code>: opens Android's own uninstall confirmation for an app the user picked; the app deletes nothing itself.</li>
+              <li>No <code>QUERY_ALL_PACKAGES</code>: narrow <code>&lt;queries&gt;</code> for launcher, home, chooser and web-browser intents only.</li>
+              <li>No <code>SYSTEM_ALERT_WINDOW</code>, foreground service, usage access, location or other sensitive permissions.</li>
+            </ul>
+            <p>Full detail: <a href="permissions.html">permissions explained</a>.</p>
+          </section>
+
+          <section id="deceptive" aria-labelledby="h-dec">
+            <h2 id="h-dec">5. Deceptive behavior and claims</h2>
+            <ul class="checklist">
+              <li>Results are always worded as <strong>"evidence to review, not proof"</strong>. The app shows "Possible source", "Ambiguous" or "Source unavailable" with a reason.</li>
+              <li>No accuracy percentages, no "your phone is safe", and no "malware", "adware" or "harmful" labels on apps.</li>
+              <li>Not presented as an antivirus, security scanner or ad blocker. It does not block or interfere with ads in other apps.</li>
+              <li>Uninstall, disable and change permissions are offered as equal options in Android's App info; ClearGuard never removes apps itself and does not push removal.</li>
+              <li>Limits are stated openly: many overlays and in-page ads report nothing, and popups before a session are not seen.</li>
+              <li>No imitation of system warnings or notifications.</li>
+            </ul>
+          </section>
+
+          <section id="families" aria-labelledby="h-fam">
+            <h2 id="h-fam">6. Families policy and target audience</h2>
+            <p>ClearGuard is not designed for or directed at children, and is not submitted to the Designed for Families programme. The intended target audience is adults. <span class="todo">confirm the age group selected in Play Console (for example 18+); if a group under 13 is ever included, Families requirements apply</span></p>
+          </section>
+
+          <section id="other" aria-labelledby="h-oth">
+            <h2 id="h-oth">7. Other declarations</h2>
+            <ul>
+              <li><strong>Ads:</strong> the app contains no ads.</li>
+              <li><strong>App access:</strong> no login is required. Reviewers can use "Try a test popup" during a session to see a full result without real adware.</li>
+              <li><strong>In-app purchases:</strong> none in the app (no billing library).</li>
+              <li><strong>Google Play In-App Review:</strong> may request Google's rating prompt once after a positive outcome; no data about investigations is sent.</li>
+            </ul>
+          </section>
+
+          <section id="links" aria-labelledby="h-links">
+            <h2 id="h-links">8. Links for Play Console</h2>
+            <dl class="facts">
+              <dt>Privacy policy</dt><dd><a href="privacy-policy.html">privacy-policy.html</a></dd>
+              <dt>Data deletion</dt><dd><a href="data-deletion.html">data-deletion.html</a></dd>
+              <dt>Support email</dt><dd><a href="mailto:bushramanzoor502@gmail.com">bushramanzoor502@gmail.com</a></dd>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="" width="36" height="36"><span>ClearGuard<small>by UtilEdge</small></span></a>
+          <p>Investigate unexpected popups on Android. Works offline: no account, no analytics, no ads, no internet permission.</p>
+        </div>
+        <nav aria-label="Product">
+          <h2>Product</h2>
+          <ul>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#privacy">Privacy by design</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="permissions.html">Permissions explained</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Legal">
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy policy</a></li>
+            <li><a href="terms-of-use.html">Terms of use</a></li>
+            <li><a href="data-deletion.html">Data deletion</a></li>
+            <li><a href="play-store-compliance.html">Google Play compliance</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:bushramanzoor502@gmail.com">bushramanzoor502@gmail.com</a></li>
+            <li><a href="contact.html">Contact page</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <!-- OWNER TODO: confirm the legal entity name shown here. -->
+        <span>&copy; 2026 UtilEdge</span>
+        <span>Google Play is a trademark of Google LLC.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

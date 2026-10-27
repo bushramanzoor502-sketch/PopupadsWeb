@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClearGuard: investigate unexpected popups on Android</title>
+  <meta name="description" content="ClearGuard helps you see which app may be behind an unexpected popup on your Android phone. Works offline, keeps evidence on your device, and never acts for you.">
+  <meta name="theme-color" content="#4B4577">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+  <meta property="og:title" content="ClearGuard: investigate unexpected popups on Android">
+  <meta property="og:description" content="ClearGuard helps you see which app may be behind an unexpected popup on your Android phone. Works offline, keeps evidence on your device, and never acts for you.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/montserrat.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36">
+        <span>ClearGuard<small>by UtilEdge</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="privacy-policy.html">Privacy policy</a></li>
+          <li><a href="terms-of-use.html">Terms of use</a></li>
+          <li><a href="permissions.html">Permissions</a></li>
+          <li><a href="data-deletion.html">Data deletion</a></li>
+          <li><a href="play-store-compliance.html">Play compliance</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="overline">Popup source finder for Android</p>
+          <h1 id="hero-title">Which app is behind that popup?</h1>
+          <p class="lede">Start a short session, mark the popup when it appears, and see which app brought a window to the front at that moment. Everything stays on your phone.</p>
+          <div class="hero-actions">
+            <!-- OWNER TODO: when the Play listing is live, replace this <span> with Google's official
+                 "Get it on Google Play" badge (https://play.google.com/intl/en_us/badges/) linking to
+                 https://play.google.com/store/apps/details?id=com.veriattend.clearguard -->
+            <span class="btn btn-soon" role="note">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.6 2.3 13.9 12l-9.3 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1Zm10.4 10.8 2.4 2.5-10.9 6.2 8.5-8.7Zm4-3.1 2.3 1.3c.8.5.8 1.6 0 2l-2.3 1.4-2.7-2.7 2.7-2Zm-12.5-7.8 10.9 6.2-2.4 2.5-8.5-8.7Z"/></svg>
+              <span class="stack"><small>Coming soon to</small>Google Play</span>
+            </span>
+            <a class="btn btn-ghost" href="#how">How it works</a>
+          </div>
+        </div>
+
+        <div class="phone-wrap">
+          <div class="phone">
+            <img class="phone-img" src="assets/img/screens/01-home-ready.jpg" width="486" height="1080" fetchpriority="high"
+                 alt="ClearGuard's Home screen: a night-sky background with the word Ready, a white power button on a lavender planet labelled Tap to start, a 15 min Change option, and a tab bar with Home, Protect, History and Settings.">
+          </div>
+        </div>
+      </section>
+
+      <ul class="trust" aria-label="Privacy at a glance">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2.3 4.7 3.7 3.3l17 17-1.4 1.4-3.4-3.4A11 11 0 0 1 12 20a10 10 0 0 1-7-2.8l1.4-1.5A8 8 0 0 0 12 18c1 0 2-.2 2.8-.5L2.3 4.7ZM12 4a11 11 0 0 1 9.9 6.2l-1.8.8A9 9 0 0 0 9.4 6.4L7.9 4.9A11 11 0 0 1 12 4Z"/></svg>No internet permission</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2H5v12h14V9h-2Zm-8-2a3 3 0 0 1 6 0v2H9V7Z"/></svg>Encrypted on device</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 3h6l1 2h4v2H4V5h4l1-2Zm-3 6h12l-1 12H7L6 9Z"/></svg>Auto-deleted after 7 days</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-6 10a6 6 0 0 1 9.5-4.9l-8.4 8.4A6 6 0 0 1 6 12Zm6 6c-1.3 0-2.5-.4-3.5-1.1l8.4-8.4A6 6 0 0 1 12 18Z"/></svg>No ads or tracking</li>
+      </ul>
+
+      <section id="what" class="band" aria-labelledby="what-title">
+        <div class="section-head">
+          <p class="overline">The idea</p>
+          <h2 id="what-title">What ClearGuard does</h2>
+        </div>
+        <div class="split">
+          <p class="lede">Some popups cover your screen without saying which app sent them. During a session you start, ClearGuard notes <strong>which app brought a window to the front, and when</strong>. Mark a popup and it lists the apps that had a window event at that moment.</p>
+          <div class="card card-note">
+            <h3>Evidence, not a verdict</h3>
+            <p>A result is something to review, not proof that an app showed an ad. Many overlays and ads inside apps or web pages report nothing to Android. When ClearGuard cannot tell, it says "Source unavailable" and why.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="band" aria-labelledby="how-title">
+        <div class="section-head">
+          <p class="overline">Three steps</p>
+          <h2 id="how-title">How it works</h2>
+        </div>
+        <ol class="timeline">
+          <li>
+            <span class="tl-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 3.5v7.5M7.2 6.6a7 7 0 1 0 9.6 0"/></svg></span>
+            <span class="tl-num">Step 1</span>
+            <h3>Start a session</h3>
+            <p>One tap starts a 15-minute session. Tap "Change" for 5, 30 or 60 minutes or 2 hours. ClearGuard observes only while a session runs.</p>
+          </li>
+          <li>
+            <span class="tl-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9 2a1 1 0 0 1 1 1v8.3l1.2-.3a2 2 0 0 1 2.3 1.4l.1.3 1.4-.3a2 2 0 0 1 2.4 1.5l1.3 5.2A2 2 0 0 1 17.2 21H11a2 2 0 0 1-1.7-1L6 14.3a1.5 1.5 0 0 1 2-2.1V3a1 1 0 0 1 1-1Z"/></svg></span>
+            <span class="tl-num">Step 2</span>
+            <h3>Mark the popup</h3>
+            <p>Tap the floating bubble, the Quick Settings tile, the notification or the widget. Automatic detection can also save a possible popup for you.</p>
+          </li>
+          <li>
+            <span class="tl-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M10 3a7 7 0 0 1 5.6 11.2l5.1 5.1-1.4 1.4-5.1-5.1A7 7 0 1 1 10 3Zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/></svg></span>
+            <span class="tl-num">Step 3</span>
+            <h3>Review the evidence</h3>
+            <p>See the possible source, or why it is unknown. Open Android's App info and decide yourself. ClearGuard never uninstalls or taps for you.</p>
+          </li>
+        </ol>
+        <p class="note">Stopping a session saves it to History automatically ("Session saved"). A session that saw no app changes saves nothing.</p>
+      </section>
+
+      <section id="privacy" class="band" aria-labelledby="privacy-title">
+        <div class="section-head">
+          <p class="overline">Privacy first</p>
+          <h2 id="privacy-title">Private by design</h2>
+        </div>
+        <div class="grid grid-six">
+          <div class="card">
+            <div class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M2.3 4.7 3.7 3.3l17 17-1.4 1.4-3.4-3.4A11 11 0 0 1 12 20a10 10 0 0 1-7-2.8l1.4-1.5A8 8 0 0 0 12 18c1 0 2-.2 2.8-.5L2.3 4.7ZM12 4a11 11 0 0 1 9.9 6.2l-1.8.8A9 9 0 0 0 9.4 6.4L7.9 4.9A11 11 0 0 1 12 4Z"/></svg></div>
+            <h3>Works offline</h3>
+            <p>No account, analytics, ads or crash reporting. No internet permission at all.</p>
+          </div>
+          <div class="card">
+            <div class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 1 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-4Zm0 6a3 3 0 0 1 1 5.8V16h-2v-3.2A3 3 0 0 1 12 7Z"/></svg></div>
+            <h3>Encrypted on your phone</h3>
+            <p>Records are encrypted with a key in Android's secure key storage, and kept out of cloud backup.</p>
+          </div>
+          <div class="card">
+            <div class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 5v5.4l4 2.4-1 1.7-5-3V7h2Z"/></svg></div>
+            <h3>You start every session</h3>
+            <p>Switching ClearGuard on starts nothing. It stops when you stop, when time is up, or when the screen turns off.</p>
+          </div>
+          <div class="card">
+            <div class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Zm10 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg></div>
+            <h3>No screen content</h3>
+            <p>Only the app's package name, the event type and the time. Never text, messages, passwords or screenshots.</p>
+          </div>
+          <div class="card">
+            <div class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M9 3h6l1 2h4v2H4V5h4l1-2Zm-3 6h12l-1 12H7L6 9Z"/></svg></div>
+            <h3>Deleted automatically</h3>
+            <p>After 7 days by default (or 1 or 30). Delete one record, all history, or reset any time.</p>
+          </div>
+          <div class="card">
+            <div class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 2 7v2h20V7L12 2ZM4 11v7h3v-7H4Zm6.5 0v7h3v-7h-3ZM17 11v7h3v-7h-3ZM2 20v2h20v-2H2Z"/></svg></div>
+            <h3>Honest about limits</h3>
+            <p>No accuracy scores, no "your phone is safe", no "malware" labels. Unknown means unknown.</p>
+          </div>
+        </div>
+        <p class="note">Read the <a href="privacy-policy.html">privacy policy</a>, <a href="permissions.html">permissions explained</a> and <a href="data-deletion.html">how to delete your data</a>.</p>
+      </section>
+
+      <section id="screens" class="band" aria-labelledby="screens-title">
+        <div class="section-head">
+          <p class="overline">A look inside</p>
+          <h2 id="screens-title">Screenshots</h2>
+          <p class="meta">Captured from the app on a Pixel 6a in dark mode.</p>
+        </div>
+        <div class="shots">
+          <figure class="shot"><div class="shot-frame"><img src="assets/img/screens/01-home-ready.jpg" width="486" height="1080" loading="lazy" decoding="async" alt="Home screen ready to start: big Ready text, white power button with Tap to start, and 15 min Change."></div><figcaption>Ready to start</figcaption></figure>
+          <figure class="shot"><div class="shot-frame"><img src="assets/img/screens/02-home-watching.jpg" width="486" height="1080" loading="lazy" decoding="async" alt="Home during a session: a 14:50 countdown, Watching for popups, totals of 3 apps seen, 5 window changes and 1 possible popup, with Pause and A popup appeared buttons."></div><figcaption>Watching for popups</figcaption></figure>
+          <figure class="shot"><div class="shot-frame"><img src="assets/img/screens/03-live.jpg" width="486" height="1080" loading="lazy" decoding="async" alt="Live observation screen: a 14:28 timer ring with 3 apps seen, 5 window changes and 1 possible popup, the newest from Chrome."></div><figcaption>Live observation</figcaption></figure>
+          <figure class="shot"><div class="shot-frame"><img src="assets/img/screens/04-protect.jpg" width="486" height="1080" loading="lazy" decoding="async" alt="Protect tab: Check apps and Learn switch, tiles for Recent apps, Visible apps and Permissions, and a Popup cleanup bar."></div><figcaption>Protect tools</figcaption></figure>
+          <figure class="shot"><div class="shot-frame"><img src="assets/img/screens/05-saved.jpg" width="486" height="1080" loading="lazy" decoding="async" alt="Session saved confirmation with a View in History button."></div><figcaption>Saved automatically</figcaption></figure>
+          <figure class="shot"><div class="shot-frame"><img src="assets/img/screens/06-history.jpg" width="486" height="1080" loading="lazy" decoding="async" alt="History timeline grouped by Today and Yesterday, kept for 7 days, with a bin button on each saved session or popup."></div><figcaption>History with delete</figcaption></figure>
+        </div>
+      </section>
+
+      <section id="faq" class="faq band" aria-labelledby="faq-title">
+        <div class="section-head">
+          <p class="overline">Questions</p>
+          <h2 id="faq-title">Frequently asked questions</h2>
+        </div>
+        <details>
+          <summary>Does ClearGuard block or remove ads?</summary>
+          <div class="answer"><p>No. ClearGuard does not block ads, change other apps, or uninstall anything. It shows you which app may be behind a popup and opens Android's App info screen for an app you choose. There you decide whether to uninstall, disable, or change its permissions, and Android asks you to confirm.</p></div>
+        </details>
+        <details>
+          <summary>Why does it need the Accessibility service?</summary>
+          <div class="answer"><p>Android only tells an app which other app brought a window to the front through the Accessibility service. ClearGuard asks for the narrowest form: window-change events only, with no access to window content, no gestures and no screenshots. It is not an accessibility tool for people with disabilities. You see a separate explanation and agree to it before ClearGuard asks Android for anything. See <a href="permissions.html#accessibility">permissions explained</a>.</p></div>
+        </details>
+        <details>
+          <summary>Can it see my messages, passwords or what I type?</summary>
+          <div class="answer"><p>No. ClearGuard's Accessibility settings turn off window-content access, so Android does not give it screen text. It only receives three things about each window-change event: the app's package name, the event type and the time.</p></div>
+        </details>
+        <details>
+          <summary>Does it send anything to the internet?</summary>
+          <div class="answer"><p>No. ClearGuard has no internet permission, no account, no analytics, no advertising and no crash reporting. If you choose "Save report", the file goes only where you pick in Android's file picker.</p></div>
+        </details>
+        <details>
+          <summary>Will it always find the app?</summary>
+          <div class="answer"><p>No, and it will tell you so. Full-screen popups that open as their own window often report an app. Ads inside an app or a web page usually belong to the app you are using, and many overlays drawn on top of other apps report nothing. ClearGuard also cannot see popups from before a session started. For website notifications and lock-screen ads, the in-app Guides explain other steps.</p></div>
+        </details>
+        <details>
+          <summary>Does it run in the background all the time?</summary>
+          <div class="answer"><p>No. Nothing is observed outside a session you start, and a session lasts at most 2 hours. Turning the screen off interrupts it. An optional reminder (off by default) can nudge you to start a session, but it never starts one by itself.</p></div>
+        </details>
+        <details>
+          <summary>How do I delete my data?</summary>
+          <div class="answer"><p>In History, tap a record's bin button or swipe it away (you get 5 seconds to Undo), or open it and tap Delete. You can also use Settings → Delete all history, or Settings → Reset ClearGuard. Records also delete themselves after the period you choose, and uninstalling removes everything. There is no account and nothing on our side to delete. See <a href="data-deletion.html">data deletion</a>.</p></div>
+        </details>
+        <details>
+          <summary>Which Android versions are supported?</summary>
+          <div class="answer"><p>Android 8.0 (API level 26) and newer.</p></div>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="" width="36" height="36"><span>ClearGuard<small>by UtilEdge</small></span></a>
+          <p>Investigate unexpected popups on Android. Works offline: no account, no analytics, no ads, no internet permission.</p>
+        </div>
+        <nav aria-label="Product">
+          <h2>Product</h2>
+          <ul>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#privacy">Privacy by design</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="permissions.html">Permissions explained</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Legal">
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy policy</a></li>
+            <li><a href="terms-of-use.html">Terms of use</a></li>
+            <li><a href="data-deletion.html">Data deletion</a></li>
+            <li><a href="play-store-compliance.html">Google Play compliance</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:bushramanzoor502@gmail.com">bushramanzoor502@gmail.com</a></li>
+            <li><a href="contact.html">Contact page</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <!-- OWNER TODO: confirm the legal entity name shown here. -->
+        <span>&copy; 2026 UtilEdge</span>
+        <span>Google Play is a trademark of Google LLC.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
