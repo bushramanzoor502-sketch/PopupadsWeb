@@ -57,14 +57,14 @@
           <h2>On this page</h2>
           <ol>
             <li><a href="#accessibility">Accessibility service</a></li>
-            <li><a href="#disclosure">The in-app disclosure</a></li>
+            <li><a href="#disclosure">The in app disclosure</a></li>
             <li><a href="#play-policy">Accessibility API policy</a></li>
             <li><a href="#bubble">Floating bubble</a></li>
             <li><a href="#notifications">Notifications</a></li>
             <li><a href="#delete-packages">Request delete packages</a></li>
             <li><a href="#visibility">Package visibility</a></li>
             <li><a href="#tile">Quick Settings tile</a></li>
-            <li><a href="#widget">Home-screen widget</a></li>
+            <li><a href="#widget">Home screen widget</a></li>
             <li><a href="#reminder">Reminder alarm</a></li>
             <li><a href="#other">Other technical entries</a></li>
             <li><a href="#not-requested">Not requested</a></li>
@@ -77,7 +77,7 @@
             <p><span class="pill">You switch it on</span> <span class="pill">Core feature</span></p>
             <dl class="facts">
               <dt>Why</dt><dd>Android tells an app which other app brought a window to the front only through an Accessibility service. Without it ClearGuard cannot link a popup to an app.</dd>
-              <dt>When</dt><dd>Only during an observation session that you start, after you agree to the in-app disclosure. Outside a session the service asks Android for no events at all. Sessions last 5 minutes to 2 hours and are interrupted when the screen turns off.</dd>
+              <dt>When</dt><dd>Only during an observation session that you start, after you agree to the in app disclosure. Outside a session the service asks Android for no events at all. Sessions last 5 minutes to 2 hours and are interrupted when the screen turns off.</dd>
               <dt>What it reads</dt><dd>For "window state changed" events only: the package name of the app, the event type and the time.</dd>
               <dt>What it never does</dt><dd>Read window content or screen text (<code>canRetrieveWindowContent="false"</code>), perform gestures or taps (<code>canPerformGestures="false"</code>), take screenshots (<code>canTakeScreenshot="false"</code>), read what you type, or change settings or other apps.</dd>
               <dt>Turn it off</dt><dd>Android Settings → Accessibility → ClearGuard (often under "Downloaded apps" or "Installed apps") → off. Or, in ClearGuard, withdraw consent on the Access screen: observation stops even while the Android setting is on.</dd>
@@ -90,9 +90,9 @@
           </section>
 
           <section id="disclosure" aria-labelledby="h-disc">
-            <h2 id="h-disc">2. The in-app prominent disclosure</h2>
+            <h2 id="h-disc">2. The in app prominent disclosure</h2>
             <p>Before ClearGuard opens Android's Accessibility settings, it shows a separate sheet in the normal flow (when you first tap to start a session). It is not hidden in a menu, and it is not combined with any other notice. You must tap <strong>"Agree and open settings"</strong> to continue; <strong>"Not now"</strong>, the back button or tapping outside count as no consent, and ClearGuard then observes nothing. If you decline, the sheet appears again the next time you try to start a session. The text, as shown in the app (disclosure version 3):</p>
-            <blockquote class="quote" aria-label="In-app disclosure text">
+            <blockquote class="quote" aria-label="In app disclosure text">
               <p><strong>Before ClearGuard observes anything</strong></p>
               <p>ClearGuard uses Android Accessibility during observation sessions you start to read the package name, event type, and timing of selected app events, including while you use other apps. This helps you review possible sources of unexpected popups.</p>
               <p>ClearGuard does not read screen text or messages, take screenshots, or perform taps.</p>
@@ -108,13 +108,13 @@
             <h2 id="h-policy">3. How this follows Google Play's Accessibility API policy</h2>
             <ul class="checklist">
               <li><strong>Disclosed purpose only.</strong> The service is used for one function: showing which app reported a window change near a popup you mark, or that automatic detection saves for your review. It is not used for advertising, analytics, or anything else.</li>
-              <li><strong>User-initiated.</strong> You switch the service on in Android settings and you start every session. ClearGuard does not start sessions by itself; even the optional reminder only opens the app.</li>
+              <li><strong>User initiated.</strong> You switch the service on in Android settings and you start every session. ClearGuard does not start sessions by itself; even the optional reminder only opens the app.</li>
               <li><strong>Prominent disclosure and affirmative consent</strong> in the app, before Android settings open, as shown above. The Android service description is extra and does not replace it.</li>
               <li><strong>Narrowest configuration.</strong> One event type (<code>typeWindowStateChanged</code>), no window content, no gestures, no screenshots.</li>
               <li><strong>No autonomous actions.</strong> ClearGuard never taps, changes settings, or stops you from disabling or uninstalling any app, including itself.</li>
               <li><strong>No circumvention</strong> of Android's security, privacy controls or notifications.</li>
               <li><strong>Not declared as an accessibility tool</strong>, so it meets the disclosure and consent requirements instead.</li>
-              <li><strong>Documented</strong> in the Play store listing description and in the Play Console Accessibility declaration. <span class="todo">owner: confirm both are submitted with this wording</span></li>
+              <li><strong>Documented</strong> in the Play store listing description and in the Play Console Accessibility declaration.</li>
             </ul>
           </section>
 
@@ -135,16 +135,16 @@
             <dl class="facts">
               <dt>Why</dt><dd>Shows ClearGuard's own session controls (Mark, Pause, Stop), a quiet note when a popup is saved, and the optional reminder.</dd>
               <dt>When</dt><dd>Requested only when you tap "Allow notifications" on the Access screen or in the reminder settings. Everything works without it.</dd>
-              <dt>What it never does</dt><dd>Show package names in the session notification, or show ads. On the lock screen the saved-popup note only says "Possible popup from an app".</dd>
+              <dt>What it never does</dt><dd>Show package names in the session notification, or show ads. On the lock screen the saved popup note only says "Possible popup from an app".</dd>
               <dt>Turn it off</dt><dd>ClearGuard Settings → ClearGuard notifications, or Android Settings → Apps → ClearGuard → Notifications.</dd>
             </dl>
           </section>
 
           <section id="delete-packages" aria-labelledby="h-del">
             <h2 id="h-del">6. Request delete packages <code>REQUEST_DELETE_PACKAGES</code></h2>
-            <p><span class="pill">Install-time</span></p>
+            <p><span class="pill">Install time</span></p>
             <dl class="facts">
-              <dt>Why</dt><dd>The "Uninstall" button in Recent apps (and in the device-admin helper of the Permissions checkup) opens Android's own uninstall confirmation for an app you picked.</dd>
+              <dt>Why</dt><dd>The "Uninstall" button in Recent apps (and in the device admin helper of the Permissions checkup) opens Android's own uninstall confirmation for an app you picked.</dd>
               <dt>When</dt><dd>Only when you tap Uninstall on an app.</dd>
               <dt>What it never does</dt><dd>Uninstall anything by itself. Android asks you to confirm, and you can cancel. System apps get no Uninstall button.</dd>
               <dt>Turn it off</dt><dd>It is not a switchable permission. If you do not want it used, simply do not tap Uninstall; App info works as an alternative.</dd>
@@ -168,7 +168,7 @@
           </section>
 
           <section id="widget" aria-labelledby="h-widget">
-            <h2 id="h-widget">9. Home-screen widget</h2>
+            <h2 id="h-widget">9. Home screen widget</h2>
             <p><span class="pill">You add it</span></p>
             <p>An optional widget that shows whether a session is running and lets you mark a popup. It never names an app, never wakes the phone on a schedule, and never starts a session without a choice inside the app. Remove it like any widget.</p>
           </section>
@@ -183,8 +183,8 @@
             <h2 id="h-other">11. Other technical entries</h2>
             <ul>
               <li><code>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>: added automatically by the AndroidX library to keep ClearGuard's internal broadcasts private to ClearGuard. It grants no access to your data.</li>
-              <li><strong>Screen-off signal</strong>: ClearGuard listens for the screen turning off, with no permission, so it can interrupt a session.</li>
-              <li><strong>Google Play In-App Review</strong>: may ask Google Play once to show its rating prompt. It adds no permission.</li>
+              <li><strong>Screen off signal</strong>: ClearGuard listens for the screen turning off, with no permission, so it can interrupt a session.</li>
+              <li><strong>Google Play In App Review</strong>: may ask Google Play once to show its rating prompt. It adds no permission.</li>
             </ul>
           </section>
 
@@ -193,7 +193,7 @@
             <ul class="nolist">
               <li>Internet access (<code>INTERNET</code>) or network state</li>
               <li>Display over other apps (<code>SYSTEM_ALERT_WINDOW</code>)</li>
-              <li>Usage access (<code>PACKAGE_USAGE_STATS</code>) or all-packages visibility (<code>QUERY_ALL_PACKAGES</code>)</li>
+              <li>Usage access (<code>PACKAGE_USAGE_STATS</code>) or all packages visibility (<code>QUERY_ALL_PACKAGES</code>)</li>
               <li>Foreground service, start at boot, or exact alarms</li>
               <li>Location, contacts, phone, SMS, camera, microphone, photos or files</li>
               <li>Device admin, VPN, or notification listener</li>
@@ -238,7 +238,6 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <!-- OWNER TODO: confirm the legal entity name shown here. -->
         <span>&copy; 2026 UtilEdge</span>
         <span>Google Play is a trademark of Google LLC.</span>
       </div>

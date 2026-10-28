@@ -71,7 +71,7 @@ Notes:
 
 Placeholders in page text are shown as a small dashed "To fill in:" note (class `todo`). Placeholders that would spoil the look (the Play button, the footer company name) are HTML comments starting `OWNER TODO`. Search for `class="todo"` and `OWNER TODO` to find them all; none should remain when you publish.
 
-1. **Support email**: done — `bushramanzoor502@gmail.com` on every page. Use the same address as the developer contact email in Play Console.
+1. **Support email**: done, `bushramanzoor502@gmail.com` on every page. Use the same address as the developer contact email in Play Console.
 2. **Legal name** of the developer or company (privacy policy, terms, contact; footer copyright has an `OWNER TODO` comment).
 3. **Postal address** (privacy policy, terms, contact).
 4. **Governing law and courts** (terms of use section 13, contact).

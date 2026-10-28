@@ -56,7 +56,7 @@
           <h2>On this page</h2>
           <ol>
             <li><a href="#data-safety">Data safety answers</a></li>
-            <li><a href="#on-device">On-device processing</a></li>
+            <li><a href="#on-device">On device processing</a></li>
             <li><a href="#accessibility">Accessibility API</a></li>
             <li><a href="#permissions">Permissions</a></li>
             <li><a href="#deceptive">Deceptive behavior</a></li>
@@ -75,7 +75,7 @@
                 <caption class="visually-hidden">Data safety form answers</caption>
                 <thead><tr><th scope="col">Question</th><th scope="col">Answer</th><th scope="col">Basis</th></tr></thead>
                 <tbody>
-                  <tr><td>Does the app collect or share any required user data types?</td><td><strong>No</strong></td><td>No <code>INTERNET</code> permission; no network, analytics, ads or crash-reporting libraries in the release build</td></tr>
+                  <tr><td>Does the app collect or share any required user data types?</td><td><strong>No</strong></td><td>No <code>INTERNET</code> permission; no network, analytics, ads or crash reporting libraries in the release build</td></tr>
                   <tr><td>Data collected</td><td><strong>None</strong></td><td>All processing happens on the device</td></tr>
                   <tr><td>Data shared</td><td><strong>None</strong></td><td>Reports are saved only by explicit user action to a location the user picks</td></tr>
                   <tr><td>Is data encrypted in transit?</td><td>Not applicable</td><td>Nothing is transmitted. Saved records are encrypted at rest (AES-256-GCM, Android Keystore key)</td></tr>
@@ -90,9 +90,9 @@
             <h2 id="h-od">2. Data processed on the device only</h2>
             <p>Not "collected" under Play's definition, but listed here for transparency:</p>
             <ul>
-              <li><strong>App activity:</strong> package name, event type and time of window-change events during user-started sessions.</li>
-              <li><strong>Installed apps:</strong> launcher-visible apps and their names, icons, install source and selected abilities, shown in the Visible apps list and the Permissions checkup.</li>
-              <li><strong>User-entered answers</strong> attached to investigations (what was seen, approximate time, follow-up).</li>
+              <li><strong>App activity:</strong> package name, event type and time of window change events during user started sessions.</li>
+              <li><strong>Installed apps:</strong> launcher visible apps and their names, icons, install source and selected abilities, shown in the Visible apps list and the Permissions checkup.</li>
+              <li><strong>User entered answers</strong> attached to investigations (what was seen, approximate time, follow up).</li>
             </ul>
             <p>All of it stays on the phone, is excluded from backup and device transfer, and follows the retention described in the <a href="privacy-policy.html#retention">privacy policy</a>.</p>
           </section>
@@ -108,8 +108,8 @@
                   <tr><td>Purpose</td><td>App functionality: show which app reported a window change near a popup the user marks, or one saved by automatic detection for review. The floating bubble used for marking is drawn by the same service, only during a session.</td></tr>
                   <tr><td>Data accessed</td><td>Package name, event type and timing of <code>TYPE_WINDOW_STATE_CHANGED</code> events only. No window content, gestures or screenshots.</td></tr>
                   <tr><td>Data collected or shared off device</td><td>None</td></tr>
-                  <tr><td>User initiation</td><td>User enables the service and starts each time-limited session (5 min to 2 h). No events are requested outside a session.</td></tr>
-                  <tr><td>Prominent disclosure</td><td>Separate in-app sheet before Android settings open, with "Agree and open settings" / "Not now"; dismissal is not consent. Full text on <a href="permissions.html#disclosure">permissions explained</a>.</td></tr>
+                  <tr><td>User initiation</td><td>User enables the service and starts each time limited session (5 min to 2 h). No events are requested outside a session.</td></tr>
+                  <tr><td>Prominent disclosure</td><td>Separate in app sheet before Android settings open, with "Agree and open settings" / "Not now"; dismissal is not consent. Full text on <a href="permissions.html#disclosure">permissions explained</a>.</td></tr>
                   <tr><td>Autonomous actions</td><td>None. The app never taps, changes settings or blocks uninstalling.</td></tr>
                   <tr><td>Listing</td><td>Accessibility use is described in the full store description.</td></tr>
                 </tbody>
@@ -120,9 +120,9 @@
           <section id="permissions" aria-labelledby="h-perm">
             <h2 id="h-perm">4. Permissions policy</h2>
             <ul>
-              <li><code>POST_NOTIFICATIONS</code>: optional, requested in context from the Access screen, used only for ClearGuard's own session controls, saved-popup notes and the opt-in reminder.</li>
+              <li><code>POST_NOTIFICATIONS</code>: optional, requested in context from the Access screen, used only for ClearGuard's own session controls, saved popup notes and the opt in reminder.</li>
               <li><code>REQUEST_DELETE_PACKAGES</code>: opens Android's own uninstall confirmation for an app the user picked; the app deletes nothing itself.</li>
-              <li>No <code>QUERY_ALL_PACKAGES</code>: narrow <code>&lt;queries&gt;</code> for launcher, home, chooser and web-browser intents only.</li>
+              <li>No <code>QUERY_ALL_PACKAGES</code>: narrow <code>&lt;queries&gt;</code> for launcher, home, chooser and web browser intents only.</li>
               <li>No <code>SYSTEM_ALERT_WINDOW</code>, foreground service, usage access, location or other sensitive permissions.</li>
             </ul>
             <p>Full detail: <a href="permissions.html">permissions explained</a>.</p>
@@ -135,14 +135,14 @@
               <li>No accuracy percentages, no "your phone is safe", and no "malware", "adware" or "harmful" labels on apps.</li>
               <li>Not presented as an antivirus, security scanner or ad blocker. It does not block or interfere with ads in other apps.</li>
               <li>Uninstall, disable and change permissions are offered as equal options in Android's App info; ClearGuard never removes apps itself and does not push removal.</li>
-              <li>Limits are stated openly: many overlays and in-page ads report nothing, and popups before a session are not seen.</li>
+              <li>Limits are stated openly: many overlays and in page ads report nothing, and popups before a session are not seen.</li>
               <li>No imitation of system warnings or notifications.</li>
             </ul>
           </section>
 
           <section id="families" aria-labelledby="h-fam">
             <h2 id="h-fam">6. Families policy and target audience</h2>
-            <p>ClearGuard is not designed for or directed at children, and is not submitted to the Designed for Families programme. The intended target audience is adults. <span class="todo">confirm the age group selected in Play Console (for example 18+); if a group under 13 is ever included, Families requirements apply</span></p>
+            <p>ClearGuard is not designed for or directed at children, and is not submitted to the Designed for Families programme. The intended target audience is adults.</p>
           </section>
 
           <section id="other" aria-labelledby="h-oth">
@@ -150,8 +150,8 @@
             <ul>
               <li><strong>Ads:</strong> the app contains no ads.</li>
               <li><strong>App access:</strong> no login is required. Reviewers can use "Try a test popup" during a session to see a full result without real adware.</li>
-              <li><strong>In-app purchases:</strong> none in the app (no billing library).</li>
-              <li><strong>Google Play In-App Review:</strong> may request Google's rating prompt once after a positive outcome; no data about investigations is sent.</li>
+              <li><strong>In app purchases:</strong> none in the app (no billing library).</li>
+              <li><strong>Google Play In App Review:</strong> may request Google's rating prompt once after a positive outcome; no data about investigations is sent.</li>
             </ul>
           </section>
 
@@ -202,7 +202,6 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <!-- OWNER TODO: confirm the legal entity name shown here. -->
         <span>&copy; 2026 UtilEdge</span>
         <span>Google Play is a trademark of Google LLC.</span>
       </div>

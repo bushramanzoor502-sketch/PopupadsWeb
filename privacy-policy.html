@@ -47,9 +47,10 @@
         <p class="lede">ClearGuard is built so that nothing about you leaves your phone. This policy explains exactly what the app reads, where it keeps it, for how long, and how you remove it.</p>
         <dl class="facts doc-card" aria-label="Document details">
           <dt>App</dt><dd>ClearGuard for Android (<code>com.veriattend.clearguard</code>)</dd>
-          <dt>Developer</dt><dd>UtilEdge <span class="todo">full legal name of the developer or company</span></dd>
-          <dt>Effective date</dt><dd><time datetime="2026-10-27">27 October 2026</time></dd>
-          <dt>Version</dt><dd>1.0</dd>
+          <dt>Developer</dt><dd><a href="https://play.google.com/store/apps/developer?id=UtilEdge" rel="noopener">UtilEdge</a></dd>
+          <dt>Effective date</dt><dd><time datetime="2026-10-28">28 October 2026</time></dd>
+          <dt>Version</dt><dd>1.1</dd>
+          <dt>In the app</dt><dd>Settings → Privacy policy (works offline)</dd>
         </dl>
       </header>
 
@@ -80,7 +81,7 @@
             <h2 id="h-summary">1. Summary</h2>
             <ul class="checklist">
               <li>ClearGuard <strong>does not send any data to us or to anyone else</strong>. It has no account, no analytics, no advertising, no crash reporting, and does not request Android's internet permission.</li>
-              <li>Only during an observation session that you start, it reads the <strong>package name, event type and time</strong> of app window-change events through Android Accessibility.</li>
+              <li>Only during an observation session that you start, it reads the <strong>package name, event type and time</strong> of app window change events through Android Accessibility.</li>
               <li>It does <strong>not</strong> read screen content, text, messages, passwords or keystrokes, and takes no screenshots.</li>
               <li>What it saves stays <strong>on your phone, encrypted</strong>, and is deleted automatically after the period you choose (7 days by default).</li>
               <li>You can delete one record, all history, or reset the app at any time. Uninstalling removes everything.</li>
@@ -94,8 +95,8 @@
 
           <section id="reads" aria-labelledby="h-reads">
             <h2 id="h-reads">3. What it reads</h2>
-            <h3>3.1 Window-change events (Accessibility), only during your sessions</h3>
-            <p>Only during a session you start, and only after you have agreed to the in-app disclosure, ClearGuard receives Android's "window state changed" events through its Accessibility service and reads three things about each one:</p>
+            <h3>3.1 Window change events (Accessibility), only during your sessions</h3>
+            <p>Only during a session you start, and only after you have agreed to the in app disclosure, ClearGuard receives Android's "window state changed" events through its Accessibility service and reads three things about each one:</p>
             <ul>
               <li>the <strong>package name</strong> of the app that reported the event (for example <code>com.example.game</code>);</li>
               <li>the <strong>event type</strong>;</li>
@@ -107,21 +108,25 @@
             <p>When you review a popup you can add details such as what you saw, roughly when it appeared, whether a listed app was not the source, and whether the popups stopped afterwards. These answers are saved with that investigation on your phone.</p>
 
             <h3>3.3 Apps on your phone, read on demand</h3>
-            <p>Some screens show information Android provides about apps on your phone: the "Visible apps" list, app names and icons, the Permissions checkup (which apps ask to draw over other apps, are device admins, have an accessibility service turned on, or can install other apps), install source, and your default browser and home app. ClearGuard asks Android for this only to show it to you on the phone. It uses a narrow package-visibility declaration (apps with a launcher icon, home apps, the share sheet and web browsers), not access to every installed package. This information is never sent anywhere.</p>
+            <p>Some screens show information Android provides about apps on your phone: the "Visible apps" list, app names and icons, the Permissions checkup (which apps ask to draw over other apps, are device admins, have an accessibility service turned on, or can install other apps), install source, and your default browser and home app. ClearGuard asks Android for this only to show it to you on the phone. It uses a narrow package visibility declaration (apps with a launcher icon, home apps, the share sheet and web browsers), not access to every installed package. This information is never sent anywhere.</p>
 
             <h3>3.4 Settings</h3>
-            <p>Your preferences (for example theme, language, retention period, floating bubble, automatic detection, notifications and reminder schedule) and your consent record (the disclosure version you agreed to and when) are stored on your phone.</p>
+            <p>Your preferences (for example theme, language, retention period, floating bubble, automatic detection, notifications and reminder schedule) and your consent record (the disclosure version you agreed to and when) are stored on your phone. ClearGuard also keeps a few small notes it needs to work: where you are in the Popup cleanup guide, when a reminder was last shown, and whether the Google Play rating prompt has already been requested.</p>
+
+            <h3>3.5 The last app you opened in Android settings</h3>
+            <p>When you open Android's App info screen for an app from ClearGuard, ClearGuard remembers that one app's package name, the time, which investigation it came from, and what you report when you come back (that you removed the app or did not), so it can ask how it went. Only the most recent one is kept: it is replaced the next time you do this, and removed when you reset ClearGuard or uninstall it.</p>
           </section>
 
           <section id="not-read" aria-labelledby="h-notread">
             <h2 id="h-notread">4. What it never reads or does</h2>
             <ul class="nolist">
-              <li>Screen text, the contents of windows, messages, emails or form fields. Window-content access is switched off in ClearGuard's Accessibility configuration.</li>
+              <li>Screen text, the contents of windows, messages, emails or form fields. Window content access is switched off in ClearGuard's Accessibility configuration.</li>
               <li>Passwords, keystrokes or anything you type.</li>
               <li>Screenshots or screen recordings.</li>
               <li>The clipboard, contacts, photos, files, location, camera or microphone.</li>
               <li>Advertising ID or other device identifiers for tracking.</li>
               <li>Taps, swipes or button presses on your behalf. ClearGuard never performs gestures or changes other apps.</li>
+              <li>ClearGuard does not use Accessibility to help with a disability and does not present itself as an accessibility tool. It uses it only for the purpose described in this policy and in the in app disclosure.</li>
             </ul>
           </section>
 
@@ -142,9 +147,9 @@
             <ul>
               <li><strong>In memory only:</strong> recent events, for about two minutes, cleared on pause, stop, screen off, or loss of access.</li>
               <li><strong>Saved investigations:</strong> when you mark a popup, or when automatic detection (on by default, switchable in Settings) saves a possible popup for you to review, ClearGuard saves that investigation on your phone.</li>
-              <li><strong>Saved sessions:</strong> while a session runs, ClearGuard keeps in-memory totals of which apps reported window changes and when. When the session ends (you stop it or its time runs out), this summary is <strong>saved on your phone automatically</strong>, encrypted the same way, unless nothing was observed, and ClearGuard confirms with "Session saved". It is lost if Android closes ClearGuard before the session ends. You can delete it from History at any time.</li>
-              <li>Package names and event details in saved records are <strong>encrypted</strong> (see <a href="#security">Security</a>).</li>
-              <li>ClearGuard is <strong>excluded from Android cloud backup and device-to-device transfer</strong>, so this data is not copied to Google's backup or to a new phone.</li>
+              <li><strong>Saved sessions:</strong> while a session runs, ClearGuard keeps in memory totals of which apps reported window changes and when. When the session ends (you stop it or its time runs out), this summary is <strong>saved on your phone automatically</strong>, encrypted the same way, unless nothing was observed, and ClearGuard confirms with "Session saved". It is lost if Android closes ClearGuard before the session ends. You can delete it from History at any time.</li>
+              <li>Package names and event details in saved records are <strong>encrypted</strong> (see <a href="#security">Security</a>). The record's date, status and the answers you add yourself (such as what you saw and roughly when) are kept in ClearGuard's private storage without that extra encryption.</li>
+              <li>ClearGuard is <strong>excluded from Android cloud backup and device to device transfer</strong>, so this data is not copied to Google's backup or to a new phone.</li>
             </ul>
             <p>We (the developer) have no server and no copy of any of this data.</p>
           </section>
@@ -159,7 +164,9 @@
                   <tr><td>Recent window events</td><td>About two minutes, in memory only</td></tr>
                   <tr><td>Saved investigations and sessions</td><td>The period you choose in Settings → Keep investigations: 1, 7 or 30 days. <strong>7 days by default.</strong> Then deleted automatically.</td></tr>
                   <tr><td>History size limit</td><td>If saved history would exceed 20 MB, the oldest records are deleted first.</td></tr>
-                  <tr><td>Settings and consent record</td><td>Until you reset ClearGuard or uninstall it</td></tr>
+                  <tr><td>Last app opened in App info</td><td>Until it is replaced by the next one, or you reset ClearGuard or uninstall it</td></tr>
+                  <tr><td>Settings and small working notes</td><td>Until you reset ClearGuard or uninstall it</td></tr>
+                  <tr><td>Consent record</td><td>Until you withdraw consent in Access or uninstall ClearGuard. Reset keeps it.</td></tr>
                   <tr><td>Reports you save</td><td>Wherever you saved them, under your control. Deleting history or uninstalling does not delete files you saved elsewhere.</td></tr>
                 </tbody>
               </table>
@@ -172,17 +179,18 @@
             <p><strong>Nothing is sent to us or to anyone else.</strong> ClearGuard does not sell, rent, share or transfer data to any third party, and contains no advertising or analytics software.</p>
             <p>If you choose <strong>Save report</strong> (as text or PDF), ClearGuard shows you the exact text and writes the file to the location you pick in Android's file picker. If you pick a cloud storage provider, that provider's own terms apply to the file. ClearGuard never shares reports automatically.</p>
             <p>When you open Android's App info or uninstall screen for an app from ClearGuard, Android handles that screen; ClearGuard only opens it.</p>
+            <p><strong>More apps</strong> in Settings opens UtilEdge's developer page in the Google Play Store app, or in your browser if Google Play is not installed. Google Play or your browser loads that page under its own terms; ClearGuard sends nothing.</p>
           </section>
 
           <section id="google-play" aria-labelledby="h-play">
             <h2 id="h-play">9. Google Play rating prompt</h2>
-            <p>After you report a good outcome (for example that a popup stopped, or that you removed an app), ClearGuard may ask Google Play once to show its standard rating prompt, using Google's In-App Review library. Google Play shows and handles that prompt under Google's own terms and privacy policy. ClearGuard sends nothing about your investigations, and on phones without Google Play nothing happens.</p>
+            <p>After you report a good outcome (for example that a popup stopped, or that you removed an app), ClearGuard may ask Google Play once to show its standard rating prompt, using Google's In App Review library. Google Play shows and handles that prompt under Google's own terms and privacy policy. ClearGuard sends nothing about your investigations, and on phones without Google Play nothing happens.</p>
           </section>
 
           <section id="notifications" aria-labelledby="h-notif">
             <h2 id="h-notif">10. Notifications, widget and test popup</h2>
-            <p>If you allow notifications, ClearGuard shows one quiet notification with Mark, Pause and Stop while a session runs; it never shows package names there. When automatic detection saves a possible popup, a quiet note may name the app's label ("Possible popup from …"). An optional reminder, off unless you turn it on, can remind you to check for popups; it never starts a session by itself.</p>
-            <p>The optional home-screen widget shows the session state and the number of investigations awaiting review; it never names an app. "Try a test popup" shows a ClearGuard screen so you can see how marking works; it is saved like any investigation and labelled as ClearGuard's test popup.</p>
+            <p>If you allow notifications, ClearGuard shows one quiet notification with Mark, Pause and Stop while a session runs; it never shows package names there. When automatic detection saves a possible popup, a quiet note may name the app's label ("Possible popup from …"); on the lock screen it only says "Possible popup from an app". An optional reminder, off unless you turn it on, can remind you to check for popups; it never starts a session by itself.</p>
+            <p>The optional home screen widget shows the session state and the number of investigations awaiting review; it never names an app. "Try a test popup" shows a ClearGuard screen so you can see how marking works; it is saved like any investigation and labelled as ClearGuard's test popup.</p>
           </section>
 
           <section id="security" aria-labelledby="h-security">
@@ -203,25 +211,26 @@
               <li><strong>Withdraw consent</strong> at any time from the Access screen: any running session stops, and ClearGuard will not observe again until you agree again.</li>
               <li><strong>Turn off</strong> ClearGuard in Android's Accessibility settings at any time.</li>
               <li><strong>Turn off</strong> automatic detection, the floating bubble, notifications or reminders in Settings.</li>
-              <li><strong>Delete</strong> a single investigation or session (in History, with the bin button or by swiping the record, or from the record's own screen), all history, or reset ClearGuard. Reset removes saved investigations and sessions, settings, consent and local keys. Android's Accessibility setting stays on until you turn it off there, but nothing is observed until you agree again and start a session.</li>
+              <li><strong>Delete</strong> a single investigation or session (in History, with the bin button or by swiping the record, or from the record's own screen), all history, or reset ClearGuard. Reset removes saved investigations and sessions, the last App info record, settings and local keys. It keeps your agreement to the disclosure, so you can start a session again right away; to take that back, use Withdraw consent. Android's Accessibility setting stays on until you turn it off there.</li>
               <li><strong>Uninstall</strong> ClearGuard to remove all of its data from your phone.</li>
             </ul>
-            <p>Data protection laws such as the GDPR (EU/UK) and US state privacy laws give you rights to access, correct, delete and port personal data, and to object to its processing. Because we do not receive or hold any data about you, there is nothing for us to access, correct, export or delete on our side; you exercise these rights directly in the app as described above. You can still contact us with any privacy question, and you may complain to your local data protection authority. Step-by-step instructions are on the <a href="data-deletion.html">data deletion page</a>.</p>
+            <p>Data protection laws such as the GDPR (EU/UK) and US state privacy laws give you rights to access, correct, delete and port personal data, and to object to its processing. Because we do not receive or hold any data about you, there is nothing for us to access, correct, export or delete on our side; you exercise these rights directly in the app as described above. You can still contact us with any privacy question, and you may complain to your local data protection authority. Step by step instructions are on the <a href="data-deletion.html">data deletion page</a>.</p>
           </section>
 
           <section id="children" aria-labelledby="h-children">
             <h2 id="h-children">13. Children</h2>
-            <p>ClearGuard is not directed at children. Because the app collects nothing off the device, we do not knowingly collect personal information from anyone, including children. <span class="todo">confirm the target age group declared in Play Console (for example 18+) and update this sentence if needed</span></p>
+            <p>ClearGuard is not directed at children. Because the app collects nothing off the device, we do not knowingly collect personal information from anyone, including children.</p>
           </section>
 
           <section id="changes" aria-labelledby="h-changes">
             <h2 id="h-changes">14. Changes to this policy and change log</h2>
-            <p>If this policy changes, the new version will be published at this address with a new effective date. If a change affects what ClearGuard reads, the in-app disclosure is also updated and you are asked to agree again before ClearGuard observes anything.</p>
+            <p>If this policy changes, the new version will be published at this address and inside the app (Settings → Privacy policy) with a new effective date. If a change affects what ClearGuard reads, the in app disclosure is also updated and you are asked to agree again before ClearGuard observes anything.</p>
             <div class="table-wrap">
               <table>
                 <caption class="visually-hidden">Policy change log</caption>
                 <thead><tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">Change</th></tr></thead>
                 <tbody>
+                  <tr><td>1.1</td><td><time datetime="2026-10-28">28 October 2026</time></td><td>Corrected what Reset removes (it keeps your consent). Added the last App info record, the small working notes kept with settings, which saved details are not separately encrypted, and that ClearGuard is not an accessibility tool. Mentioned the More apps link in Settings. Same text now shown in the app.</td></tr>
                   <tr><td>1.0</td><td><time datetime="2026-10-27">27 October 2026</time></td><td>First published version.</td></tr>
                 </tbody>
               </table>
@@ -232,9 +241,8 @@
             <h2 id="h-contact">15. Contact</h2>
             <p>Questions about privacy or this policy:</p>
             <dl class="facts">
-              <dt>Developer</dt><dd>UtilEdge <span class="todo">full legal name</span></dd>
+              <dt>Developer</dt><dd><a href="https://play.google.com/store/apps/developer?id=UtilEdge" rel="noopener">UtilEdge</a></dd>
               <dt>Email</dt><dd><a href="mailto:bushramanzoor502@gmail.com">bushramanzoor502@gmail.com</a></dd>
-              <dt>Address</dt><dd><span class="todo">postal address of the developer</span></dd>
             </dl>
           </section>
         </div>
@@ -276,7 +284,6 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <!-- OWNER TODO: confirm the legal entity name shown here. -->
         <span>&copy; 2026 UtilEdge</span>
         <span>Google Play is a trademark of Google LLC.</span>
       </div>
